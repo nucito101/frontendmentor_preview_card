@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+:root {
+  --green500: hsl(158, 36%, 37%);
+  --green700: hsl(158, 42%, 18%);
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+  --fontweight-reegular: 500;
+  --fontweight-bold: 700;
+  --font-accent: "fraunces", serif;
+  --font-base: "montserrat", sans-serif;
+  font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  font-weight: var(--fontweight-reegular);
+  color: var(--grey);
+  background-color: var(--cream);
+}
+
+.product {
+  background-color: var(--white);
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  max-width: 700px;
+}
+
+.product__image__container {
+  position: relative;
+}
+
+.product__image__mob {
+  width: 100%;
+  height: 100%;
+}
+
+.product__image__des {
+  display: none;
+}
+
+.product__content {
+  width: 90%;
+  padding: 2rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.product__category {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+.product__title {
+  font-size: 2.9rem;
+  font-family: var(--font-accent);
+  color: var(--black);
+}
+
+.product__discription {
+  line-height: 1.5rem;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+.price__container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.product__price__act {
+  font-size: 2.5rem;
+  font-family: var(--font-accent);
+  color: var(--green500);
+}
+
+.product__price__og {
+  text-decoration: line-through;
+}
+
+.purchase__btn {
+  font-size: 1rem;
+  font-weight: var(--fontweight-bold);
+  cursor: pointer;
+  padding: 1.2rem 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  gap: 0.75rem;
+  background-color: var(--green500);
+  color: var(--white);
+  border-radius: 0.5rem;
+}
+
+.purchase__btn:is(:focus, :hover) {
+  background-color: var(--green700);
+}
+
+@media only screen and (min-width: 37em) {
+  .product {
+    flex-direction: row;
+    margin: 10% auto;
+  }
+
+  .product__image__mob {
+    display: none;
+  }
+
+  .product__image__des {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
